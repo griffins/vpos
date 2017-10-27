@@ -1,0 +1,12 @@
+loopy.co.ke:8080
+tls oringogriffins78@gmail.com
+root ./public
+
+fastcgi / 127.0.0.1:9000 php
+
+rewrite {
+    to {path} {path}/ /index.php?{query}
+}
+
+errors stdout
+log stdout

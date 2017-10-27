@@ -23,6 +23,10 @@ Route::get('/', function () {
 });
 Route::get('profile', function () {
 //    dd(auth()->user());
-    return view('profile');
+    if (auth()->check()) {
+        return view('profile');
+    } else {
+       return redirect('/');
+    }
 });
 Route::auth();
