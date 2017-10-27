@@ -11,12 +11,18 @@
 |
 */
 
+use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
+
 Route::get('/', function () {
     if (auth()->check()) {
-        return redirect('welcome');
+        return view('welcome');
     } else {
         return view('login');
     }
 });
-
+Route::get('profile', function () {
+//    dd(auth()->user());
+    return view('profile');
+});
 Route::auth();
